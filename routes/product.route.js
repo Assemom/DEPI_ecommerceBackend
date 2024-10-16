@@ -12,9 +12,13 @@ const router = Router();
 
 router.route("/").post(uploadProductImg.array("image_urls"), createProduct);
 
+router.post("/products",createProduct);
+
 router.get("/statistics", getHomePageStatistics);
 router.get("/search", getAllProducts);
 
 router.route("/:id").get(getProduct).patch(updateProduct);
+
+
 
 export default router;
